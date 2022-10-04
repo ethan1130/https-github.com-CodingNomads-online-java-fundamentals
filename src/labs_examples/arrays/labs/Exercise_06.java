@@ -16,11 +16,17 @@ public class Exercise_06 {
 
     public static void main(String[] args){
         int[] nums = {45, 87, 62, 99, 1, 42, 12};
+// type out int array nums = {12, 42, 1, 99, 62, 87, 45}
 
         int temp;
 
         // Question: in the for loop below, why do we divide "nums.length" by 2?
-        for(int i = 0; i < nums.length / 2; i++){
+        for(int i = 0; i < nums.length /2; i++){
+            temp = nums[i];
+            nums[i] = nums[nums.length - i - 1];
+            nums[nums.length - i - 1] = temp;
+
+
             // swap elements at indexes in array
             // you have two indices readily available for you to use "i" (which increments) and "nums.length"
             // you've also got this "temp" variable you can use to hold a value temporarily

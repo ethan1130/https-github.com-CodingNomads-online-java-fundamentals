@@ -13,5 +13,19 @@ import java.util.Arrays;
  */
 
 public class Exercise_01 {
+    public static void main(String[] args) {
 
+        int number[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        int sum = 0;
+
+        for (int x = 1; x < number.length; x++) {
+
+            sum = sum + number[x];
+
+            System.out.println("Total Sum is " + sum);
+        }
+
+
+    }
 }
