@@ -29,6 +29,7 @@ public class Deck {
         int originalSize = this.cards.size();
         for(int i = 0; i < originalSize; i++){
             randomCardIndex = random.nextInt((this.cards.size()-1 -0)+1)+0;
+//            check for duplicates
             tmpDeck.add(this.cards.get(randomCardIndex));
             this.cards.remove(randomCardIndex);
         }
@@ -63,6 +64,21 @@ public class Deck {
         comingFrom.removeCard(0);
     }
 
+    public int deckSize(){
+        return this.cards.size();
+    }
+
+    public void moveAllToDeck(Deck moveTo){
+        int thisDeckSize = this.cards.size();
+        for(int i = 0; i < thisDeckSize; i++){
+            moveTo.addCard(this.getCard(i));
+        }
+
+        for(int i = 0; i < thisDeckSize; i++ ){
+            this.removeCard(0);
+        }
+    }
+
     public int cardsValue(){
         int totalValue = 0;
         int aces = 0;
@@ -92,5 +108,6 @@ public class Deck {
                 totalValue += 11;
             }
         }
+        return totalValue;
     }
 }
